@@ -4,10 +4,10 @@ A collection of custom LaTeX files.
 ## Getting Started
 
 ### Prerequsites
-- LaTeX ```https://www.latex-project.org/get/```
--The "User Tags" are written specifically for TexMaker, and can also be used in TeXStudio as Macros:
-  TeXMaker: ```http://www.xm1math.net/texmaker/```
-  TeXStudio: ```http://www.texstudio.org/```
+  - LaTeX https://www.latex-project.org/get/
+  - The "User Tags" are written specifically for TexMaker, and can also be used in TeXStudio as Macros:  
+    - TeXMaker: http://www.xm1math.net/texmaker/  
+    - TeXStudio: http://www.texstudio.org/
 
 ### Installation
 Use the instructions in the following link to install these packages in a centralized location, so that these files can be accessed from any LaTeX files that you write in the future. 
@@ -27,7 +27,11 @@ Builds on top of TCshort.sty, and contains packages often used in writing math a
 #### TCcommon.sty
 Builds on top of TCbasic.sty, and Contains graphics packages, definitions for theorem enviornments, custom enviornments:
   - SAGE: Modified version of verbatium with Python option.
-  ```\begin{SAGE} blah blah blah \end{SAGE}```
+  ```
+  \begin{SAGE} 
+    blah blah blah 
+  \end{SAGE}
+  ```
   - problemset: Custom enumerate enviornment useful for writing homework, with custom command "\problem{filename}". This command serves as \item" and \input{"filename.tex"}. The file name is displayed for each problem. Note that spaces are okay in filenames.
   ```
   \begin{problemset}
@@ -45,8 +49,8 @@ Builds on top of TCbasic.sty, and Contains graphics packages, definitions for th
 
 ### Flashcards
 See the following for examples:
--https://mathwithtimmy.com/2017/09/09/real-analysis-i-ii/
--https://mathwithtimmy.com/2017/02/06/precalculus-resources-intro-review-of-functions/
+  - https://mathwithtimmy.com/2017/09/09/real-analysis-i-ii/
+  - https://mathwithtimmy.com/2017/02/06/precalculus-resources-intro-review-of-functions/
 
 #### avery5388.cfg, avery5911cfg
 Files needed for making DOUBLE SIDED NOTECARDS
