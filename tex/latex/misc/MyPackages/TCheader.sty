@@ -1,0 +1,52 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{TCheader}[2017/11/23 TC Header Package]
+
+%header and formatting%
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\RequirePackage[utf8]{inputenc} %input font encoding
+\RequirePackage[T1]{fontenc} % output font encoding
+
+%page styles and header/footer codes
+\pagestyle{fancy} %that's right fancy af%
+\fancyhf{}
+\let\runauthor\@author
+\let\runtitle\@title
+\def\smalltitle{
+\begin{center}
+\begin{Large}
+\runtitle
+\end{Large}
+\end{center}
+}
+
+\def\quiztitle{
+\begin{center}
+\begin{Large}
+\runtitle
+\end{Large} \\
+\today
+\end{center}
+}
+
+\providecommand{\quoteoftheday}{"Pure mathematics is, in its way, the poetry of logical ideas." \\ - Albert Einstein (1879-1955) German-born theoretical physicist}
+
+%Regular Notes/Homework
+\DeclareOption{notes}{
+\lhead{\begin{small}\runtitle \, - \today \end{small}}
+\rhead{\begin{small}\runauthor \end{small}}
+\rfoot{\begin{small}Page \thepage \hspace{1pt} of \pageref{LastPage} \end{small}}
+}
+
+
+
+\DeclareOption{quiz}{ 
+\lhead{\begin{small}\runtitle \end{small}}
+\chead{\begin{small}Your Name: \end{small}}
+\lfoot{\begin{small} \textit{\quoteoftheday}  \end{small}}
+\rfoot{\begin{small}Page \thepage \hspace{1pt} of \pageref{LastPage} \end{small}}
+}
+
+
+
+\ProcessOptions\relax

@@ -1,0 +1,108 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{TCbasic}[2018/01/28 TC Basic Package]
+
+\RequirePackage{standalone}
+%---------------------------------------%
+% Package arranged by : Tsz Timmy Chan	%
+%---------------------------------------%
+
+
+%basics%
+\RequirePackage{amsmath} %\DeclareMathOperator
+\RequirePackage{amssymb}
+\RequirePackage{latexsym}
+\RequirePackage{dsfont, array}
+\RequirePackage{graphicx}
+\RequirePackage{grffile} %Graphics processor
+\RequirePackage{wasysym}
+
+\RequirePackage{fancybox}
+\RequirePackage[sc]{mathpazo}
+\RequirePackage{multirow}
+\RequirePackage{multicol}
+
+%Makes QED symbol to be calligraphy mark :)
+\RequirePackage{pifont}
+\def\qedsymbol{\ding{118}}
+
+
+%\RequirePackage{hyperref}
+
+%===== Shortcuts =====%
+\RequirePackage{mathtools}
+%Analysis operations%
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}	%Ceiling
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} 
+\newcommand\series[1]{\sum_{#1=1}^{\infty}}
+\newcommand\pseries[1]{\sum_{#1=0}^{\infty}}
+\newcommand\derivative[2]{\frac{\delta}{\delta #2}\left( #1 \right)}
+\newcommand\closure[1]{\overline{#1}}
+\newcommand\boundary{\partial}
+\newcommand\takeaway{\backslash}
+\newcommand{\charac}[1]{\chi\raisebox{-4bp}{\scriptsize$#1$}}
+
+%Algebra operations%
+\DeclareMathOperator{\lcm}{lcm}					%LCM
+\DeclareMathOperator{\Dom}{Dom}					%Domain
+\DeclareMathOperator{\Tor}{Tor}					%Torsion 
+\newcommand{\conj}[1]{\overline{#1}} 			%conjugates for complex numbers
+\newcommand{\abs}[1]{\left|{#1}\right|} 		%absolute value
+\newcommand\norm[1]{\left\lVert#1\right\rVert}	%Norm
+\newcommand\innerprod[2]{\left\langle #1 , #2 \right\rangle } %Dot Product 
+\newcommand\GL{\operatorname{GL}} 				%General Linear Group
+\newcommand\Inn{\operatorname{Inn}} 			%Inner Product
+\newcommand\Aut{\operatorname{Aut}} 			%Automorphism Group
+\newcommand\Hom{\operatorname{Hom}}				%Homomoprhism
+\newcommand\End{\operatorname{End}}				%Endomorphism Ring
+\newcommand\Stab{\operatorname{Stab}} 			%Stablizer
+\newcommand\orb{\operatorname{orb}} 			%Orbit		
+\newcommand\gen[1]{\left< #1 \right>}			%Generator notation
+\newcommand\ch{\operatorname{ch}}				%Characteristic of fields
+\newcommand\rank{\operatorname{rank}}
+\def\normsubgroup{\trianglelefteq}
+\newcommand\dotp[1]{\left\langle #1 \right\rangle}
+
+%Matrix operations%
+\DeclareMathOperator{\trace}{trace} %Trace 
+\DeclareMathOperator{\nullspace}{null} %Null Space
+
+%Topology & Metric Stuff%
+\DeclareMathOperator{\Bd}{Bd} %boundary
+\DeclareMathOperator{\nbd}{neighborhood}
+\DeclareMathOperator{\Int}{Int} %interior
+\DeclareMathOperator{\Ext}{Ext} %exterior
+\DeclareMathOperator{\Cl}{Cl} %closure
+\DeclareMathOperator{\range}{range} %range
+
+%lazy number sets%
+\newcommand{\N}{\mathbb{N}} %Natural
+\newcommand{\Z}{\mathbb{Z}} %Integer
+\newcommand{\Q}{\mathbb{Q}} %Rational
+\newcommand{\R}{\mathbb{R}} %Real
+\newcommand{\C}{\mathbb{C}} %Complex
+\newcommand{\bb}[1]{\mathbb{#1}} %General Mathbb
+\def\x{\mathbf{x}}
+\def\y{\mathbf{y}}
+\def\A{\mathbf{A}}
+\def\B{\mathbf{B}}
+\def\0{\mathbf{0}}
+\def\Z{\mathbb{Z}}
+\def\R{\mathbb{R}}
+\def\F{\mathbb{F}}
+\def\C{\mathbb{C}}
+\def\Q{\mathbb{Q}}
+\def\x{\mathbf{x}}
+\def\y{\mathbf{y}}
+\def\m{\mathbf{m}}
+
+
+
+%Shortcuts for common phrases in proofs %
+\newcommand{\Forwards}{($\Rightarrow$) }
+\newcommand{\Backwards}{($\Leftarrow$) }
+\newcommand{\contradiction}{(\Rightarrow\Leftarrow)} %contradiction
+\newcommand{\Let}{\text{Let }}%Let
+\newcommand{\Given}{\text{Given }}		%Given
+\newcommand{\Suppose}{\text{Suppose }}	%Suppose
+\newcommand{\ST}{\text{ such that }}
+\newcommand{\EG}{\operatorname{e.g.:}}
