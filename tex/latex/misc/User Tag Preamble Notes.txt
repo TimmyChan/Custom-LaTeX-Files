@@ -1,0 +1,28 @@
+
+%--------------------------------------------%
+% Packages arranged by : Tsz Timmy Chan	     %
+%                 Date : November 26th, 2016 %	
+%--------------------------------------------%
+
+\documentclass{TC}
+\usepackage{TCcommon}
+
+\title{TITLE HERE}	% Work Title Here.
+\author{Tsz Timmy Chan}	% YOUR NAME HERE 
+
+\usepackage[notes]{TCheader}
+\usepackage{TCexamtitle}
+%\renewcommand{\benediction}{" " - }
+%\renewcommand{\quoteoftheday}{" " \\ - }
+\begin{document}
+
+\begin{tabular}{p{1.5in}| p{4.5in}} 
+Keyword & Definition  \\
+\hline \hline
+
+\end{tabular}
+
+@
+
+
+\end{document}

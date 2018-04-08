@@ -1,0 +1,27 @@
+%--------------------------------------------%
+% Packages arranged by : Tsz Timmy Chan	     %
+%                 Date : Feb 25th, 2017      %
+%--------------------------------------------%
+
+
+\documentclass[avery5911,grid]{flashcards}
+\author{Tsz Timmy Chan}
+
+
+\usepackage{TCcommon}
+
+\renewcommand{\subject}{}
+\renewcommand{\Reference}{}
+
+\cardfrontfoot{\subject}
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+
+\begin{document}
+
+%\input{CopyrightCard}
+
+@
+
+
+\end{document}

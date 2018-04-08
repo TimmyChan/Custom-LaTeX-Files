@@ -1,0 +1,8 @@
+
+\begin{flashcard}[@]{@}
+\vspace*{\stretch{1}}
+\begin{center}
+
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
