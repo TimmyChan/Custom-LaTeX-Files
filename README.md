@@ -19,13 +19,13 @@ Use the instructions in the following link to install these packages in a centra
 Note that the file structure of this github follows the specifications described above, and no changes are necessary.
 
 ### tex/latex/misc/MyPackages
-This folder houses all the .sty files
+This folder houses all the .sty files. The structure is TCshort.sty ⊂ TCbasic.sty ⊂ TCcommon.sty
 #### TCshort.sty 
 Contains shortcuts commonly used in Algebra and Analysis.
 #### TCbasic.sty
-Contains packages often used in writing math and includes TCshort, but removed definitions and packages that conflict with Beamer
+Builds on top of TCshort.sty, and contains packages often used in writing math and includes TCshort, but definitions and packages that conflict with Beamer are in TCcommon.sty
 #### TCcommon.sty
-Contains graphics packages, definitions for theorem enviornments, custom enviornments:
+Builds on top of TCbasic.sty, and Contains graphics packages, definitions for theorem enviornments, custom enviornments:
   - SAGE: Modified version of verbatium with Python option.
   ```\begin{SAGE} blah blah blah \end{SAGE}```
   - problemset: Custom enumerate enviornment useful for writing homework, with custom command "\problem{filename}". This command serves as \item" and \input{"filename.tex"}. The file name is displayed for each problem. Note that spaces are okay in filenames.
@@ -44,7 +44,9 @@ Contains graphics packages, definitions for theorem enviornments, custom enviorn
   ```
 
 ### Flashcards
-See ```https://mathwithtimmy.com/2017/09/09/real-analysis-i-ii/``` and ```https://mathwithtimmy.com/2017/02/06/precalculus-resources-intro-review-of-functions/```for examples.
+See the following for examples:
+-https://mathwithtimmy.com/2017/09/09/real-analysis-i-ii/
+-https://mathwithtimmy.com/2017/02/06/precalculus-resources-intro-review-of-functions/
 
 #### avery5388.cfg, avery5911cfg
 Files needed for making DOUBLE SIDED NOTECARDS
