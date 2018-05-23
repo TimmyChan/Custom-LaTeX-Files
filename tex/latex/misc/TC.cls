@@ -6,8 +6,10 @@
 %                 Date : Oct, 2016		%
 %---------------------------------------%
 \LoadClass{article}
-\RequirePackage{standalone}
 
+
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions\relax
 
 %page properties%
 \hoffset=0in 
@@ -19,9 +21,4 @@
 \textheight=9in
 
 
-
-
-
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
-\ProcessOptions\relax
 
