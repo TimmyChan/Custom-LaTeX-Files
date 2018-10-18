@@ -11,8 +11,9 @@
 \RequirePackage{amsmath} %\DeclareMathOperator
 \RequirePackage{amssymb}
 \RequirePackage{latexsym}
-\RequirePackage{dsfont, array}
-\RequirePackage{graphicx}
+\RequirePackage{dsfont, array} 
+\RequirePackage{graphicx} % include graphics
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg,.svg,.gif} 
 \RequirePackage{grffile} %Graphics processor
 \RequirePackage{wasysym}
 
@@ -31,3 +32,10 @@
 
 %\RequirePackage{hyperref}
 \RequirePackage{TCshort}
+
+
+\RequirePackage{mdframed}
+
+\newcommand{\researchquestion}[1]{\begin{mdframed}[backgroundcolor=black,fontcolor=white]
+\textbf{#1}
+\end{mdframed}}
