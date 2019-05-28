@@ -13,6 +13,7 @@
 \RequirePackage{latexsym}
 \RequirePackage{dsfont, array} 
 \RequirePackage{graphicx} % include graphics
+%\RequirePackage[dvipsnames]{xcolor}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg,.svg,.gif} 
 \RequirePackage{grffile} %Graphics processor
 \RequirePackage{wasysym}
@@ -36,6 +37,11 @@
 
 \RequirePackage{mdframed}
 
-\newcommand{\researchquestion}[1]{\begin{mdframed}[backgroundcolor=black,fontcolor=white]
+\newcommand{\researchnote}[1]{\begin{mdframed}[backgroundcolor=black,fontcolor=white]
+\textbf{#1}
+\end{mdframed}}
+
+
+\newcommand{\researchquestion}[1]{\begin{mdframed}[backgroundcolor=NavyBlue,fontcolor=white]
 \textbf{#1}
 \end{mdframed}}

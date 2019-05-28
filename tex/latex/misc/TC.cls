@@ -5,7 +5,7 @@
 % Class arranged by : Tsz Timmy Chan	%
 %                 Date : Oct, 2016		%
 %---------------------------------------%
-\LoadClass{article}
+\LoadClass[12pt]{article}
 
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
