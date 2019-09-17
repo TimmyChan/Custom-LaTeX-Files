@@ -9,8 +9,10 @@
 %===== Shortcuts =====%
 \RequirePackage{mathtools}
 %Analysis operations%
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}	%Ceiling
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} 
+%\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}	%Ceiling
+\newcommand\ceil[1]{\left\lceil #1 \right\rceil}
+%\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} 
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
 \newcommand\series[1]{\sum_{#1=1}^{\infty}}
 \newcommand\pseries[1]{\sum_{#1=0}^{\infty}}
 \newcommand\derivative[2]{\frac{\delta}{\delta #2}\left( #1 \right)}
