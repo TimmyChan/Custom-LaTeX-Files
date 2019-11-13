@@ -13,6 +13,8 @@
 \RequirePackage{TCbasic}
 \RequirePackage[shortlabels]{enumitem}
 \RequirePackage[useregional]{datetime2}
+\RequirePackage{microtype}
+
 
 \RequirePackage{hyperref}
 
@@ -40,7 +42,8 @@
 
 
 
-
+%Theorems%
+\RequirePackage{cleveref}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem*{definition*}{Definition}
@@ -87,5 +90,14 @@
 
 \newcommand{\question}[1]{\item \input{"#1".tex}}
 
+
+%Danger sign !
+\RequirePackage{stackengine}
+\RequirePackage{scalerel}
+\RequirePackage{xcolor}
+\newcommand\dangersign[1][2ex]{%
+  \renewcommand\stacktype{L}%
+  \scaleto{\stackon[1.3pt]{\color{red}$\triangle$}{\tiny\bfseries !}}{#1}%
+}
 
 
