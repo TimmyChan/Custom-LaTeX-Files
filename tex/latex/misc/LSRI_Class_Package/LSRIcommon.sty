@@ -1,0 +1,99 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{LSRIcommon}[2019/12/12 LSRI Common Package]
+
+%---------------------------------------%
+% Package arranged by : Tsz Timmy Chan	%
+%	Contains common settings			%
+%	Extends LSRIbasic and LSRIshort		%
+%---------------------------------------%
+
+
+\RequirePackage{LSRIbasic}	% Load basics
+\RequirePackage{standalone} % Make LaTeX input cut out preamble of 
+							%	the files being inputted
+							%	making compilation of subfiles easier.
+
+\RequirePackage[shortlabels]{enumitem}	% Additional customization of 
+										%	enumerate environment
+\setlist{nolistsep}						% Make lists spacing consistent			
+										%	 with rest of text
+\RequirePackage[useregional]{datetime2} % Better date/time management
+\RequirePackage{microtype}				% Handles character protrusion
+										%	and font expansion
+
+
+%=====Graphics Hardcoding=====%
+\RequirePackage{tikz}       % Enables Tikz drawing of diagrams
+\RequirePackage{mathrsfs}   % Provides a \mathscr command (GeoGebra)
+\usetikzlibrary{arrows}		% Arrows used for GeoGebra 
+\RequirePackage{wrapfig} 
+\RequirePackage{cleveref}	% Refs include "fig." or "table"
+\RequirePackage{float}
+
+%=====Flashcards=====%
+\providecommand{\subject}{}		% blank subject for flashcards
+\providecommand{\Reference}{}	% blank reference for flashcards
+
+%=====APA Formatting=====%
+\usepackage[american]{babel}					% babel for making APA work
+\usepackage[style=apa]{biblatex}				% apa style for biblatex
+\DeclareLanguageMapping{american}{american-apa}	% apa spelling
+% Fix to for the redactor bug (Dec. 2019 fix)
+\AtEveryBibitem{
+  \iffieldequalstr{editortype}{redactor}
+    {\global\clearname{editor}\typeout{delete editor (type: redactor) in \thefield{citekey}}}{}%
+  \iffieldequalstr{editoratype}{redactor}
+    {\global\clearname{editora}\typeout{delete editora (type: redactor) in \thefield{citekey}}}{}%
+  \iffieldequalstr{editorbtype}{redactor}
+    {\global\clearname{editorb}\typeout{delete editorb (type: redactor) in \thefield{citekey}}}{}%
+  \iffieldequalstr{editorctype}{redactor}
+    {\global\clearname{editorc}\typeout{delete editorc (type: redactor) in \thefield{citekey}}}{}%
+}
+
+%=====Glossary=====%
+\usepackage[acronyms,toc]{glossaries} % Glossaries package
+\makeglossaries
+
+%=====Custom symbols=====%
+
+%---Danger sign---%
+\RequirePackage{stackengine}
+\RequirePackage{scalerel}
+\newcommand\dangersign[1][2ex]{%
+  \renewcommand\stacktype{L}%
+  \scaleto{\stackon[1.3pt]{\color{red}$\triangle$}{\tiny\bfseries !}}{#1}%
+}
+
+%=====Custom enviornments=====%
+%---SAGE (programming language) verbatim environment---%
+%	Customization of the python environment
+\RequirePackage{listings}
+\lstnewenvironment{SAGE}
+	{
+	\lstset{
+		language=Python,	
+        basicstyle=\ttfamily \small,
+        breaklines=true,
+        columns=fullflexible,
+        showstringspaces=false}
+	}
+	{
+	}
+
+%---Problem Set (for math homework)---%
+\definecolor{myblue}{RGB}{25,0,150}
+\newlist{problemset}{enumerate}{1}	% Problemset environment
+% Customization of formatting to have calligraphy mark
+\setlist[problemset,1]{label=\color{myblue}\ding{49},leftmargin=*,align=left, parsep=0em, topsep=0em,labelindent=0in, itemsep=1em,itemindent=0in}
+\newcounter{problem}
+\newcommand{\probsep}{\noindent\rule[0.5ex]{\linewidth}{1pt}}
+\newcommand{\problem}[1]{\item[\color{myblue}\ding{49} #1:]\hfill \input{"#1".tex}} 
+
+%---Question Set (for math quizzes)---%
+\newlist{questionset}{enumerate}{1}
+\setlist[questionset,1]{label=\color{myblue}\ding{49} \arabic*.,leftmargin=*,align=left, parsep=0em, topsep=0em,labelindent=0in, itemsep=1em,itemindent=0in}
+\newcommand{\question}[1]{\item \input{"#1".tex}}
+
+
+
+

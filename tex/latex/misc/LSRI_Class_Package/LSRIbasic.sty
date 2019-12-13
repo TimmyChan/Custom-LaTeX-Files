@@ -1,0 +1,75 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{LSRIbasic}[2019/12/12 LSRI Basic Package]
+
+%---------------------------------------%
+% Package arranged by : Tsz Timmy Chan	%
+%	Contains basic typesetting packages %
+%	Extends LSRIshort.sty				%
+%---------------------------------------%
+
+
+\RequirePackage{LSRIshort}	% Load math shortcuts
+\RequirePackage{standalone} % make LaTeX input cut out preamble of 
+							%	the files being inputted
+							%	making compilation of subfiles easier.
+
+%-----Math Typesetting-----%
+\RequirePackage{mathtools}	% Important for typesetting
+\RequirePackage{amssymb}	% Math symbols
+\RequirePackage{latexsym}	% lazy font symbols
+\RequirePackage{dsfont}		% Double blackboard fonts
+\RequirePackage{pifont} 	% More symbols; e.g. calligraphy mark
+\def\qedsymbol{\ding{118}}	% Makes QED symbol to be calligraphy mark
+
+%-----Formatting Arrays-----%
+\RequirePackage{array}		% Extends the options for column formats,
+\RequirePackage{multirow}	% Vertical "merge cell" like in excel
+\RequirePackage{multicol}	% Horizontal "merge cell" - - -
+\RequirePackage[sc]{mathpazo}	% Changes font to "Pazo" family
+
+%-----Formatting Graphics----%
+\RequirePackage{graphicx} 	% include graphics
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg,.svg,.gif} % common file types
+\RequirePackage{grffile}	% Graphics processor
+\RequirePackage{wasysym}	% glyphs: e.g. gender & astronomical symbols
+
+
+
+
+%-----Highlighting by Boxes-----%
+\RequirePackage{mdframed}
+
+
+%-----Color Definitions-----%
+\RequirePackage{xcolor}		% define common colors used in UIC
+% Primary Red
+\definecolor{uic_red}{RGB}{213,0,50}
+% Primary Blue					
+\definecolor{uic_blue}{RGB}{0,181,226}	
+% Primary Dark Blue				
+\definecolor{uic_dark_blue}{RGB}{0, 30, 98}		
+% Secondary Yellow		
+\definecolor{uic_secondary_yellow}{RGB}{255, 199, 44}
+% Secondary Teal
+\definecolor{uic_secondary_teal}{RGB}{0, 174, 199}
+
+
+\RequirePackage{hyperref}	% Setup hyperinks
+\hypersetup{				
+	colorlinks,				% Make links based on color
+	allcolors=.,		
+	linkcolor={uic_red!50!black},		% within text links red
+    citecolor={uic_darkblue!50!black}, 	% cite links darkblue
+    urlcolor={uic_blue!50!black}		% url links blue
+}
+
+% Boxes for remarks to communicat with advisor when writing%
+% researchnote = remarks
+\newcommand{\researchnote}[1]{\begin{mdframed}[backgroundcolor=black,fontcolor=white]
+\textbf{#1}
+\end{mdframed}}
+
+% researchquestion = questions 
+\newcommand{\researchquestion}[1]{\begin{mdframed}[backgroundcolor=NavyBlue,fontcolor=white]
+\textbf{#1}
+\end{mdframed}}

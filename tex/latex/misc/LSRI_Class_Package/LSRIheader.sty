@@ -1,0 +1,65 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{LSRIheader}[2019/12/12 LSRI header package]
+% This package contains three options
+% notes: header = title ... author
+% log: header = ... author
+% quiz: header = title ... "Your name:         "; footer = "quote of the day" 
+
+
+%header and formatting%
+\RequirePackage{fancyhdr}		% makes possible the formatting 
+								%	of header/footer across
+\RequirePackage{lastpage}		% used to tell the total page numbers
+\RequirePackage[utf8]{inputenc} % input font encoding
+\RequirePackage{textcomp}		% for other characters besides 
+								%	romantic alphabet
+\RequirePackage[T1]{fontenc} 	% output font encoding
+
+%page styles and header/footer codes
+\pagestyle{fancy} %that's right fancy af%
+\fancyhf{}
+\let\runauthor\@author
+\let\runtitle\@title
+\def\smalltitle{
+\begin{center}
+\begin{Large}
+\runtitle
+\end{Large}
+\end{center}
+}
+
+\def\quiztitle{
+\begin{center}
+\begin{Large}
+\runtitle
+\end{Large} \\
+\date
+\end{center}
+}
+
+\providecommand{\quoteoftheday}{"Pure mathematics is, in its way, the poetry of logical ideas." \\ - Albert Einstein (1879-1955) German-born theoretical physicist}
+
+% Regular Notes/Homework
+\DeclareOption{notes}{
+\lhead{\begin{small}\runtitle \end{small}}
+\rhead{\begin{small}\runauthor \end{small}}
+\rfoot{\begin{small}Page \thepage \hspace{1pt} of \pageref{LastPage} \end{small}}
+}
+
+% Log for journaling
+\DeclareOption{log}{
+\lhead{ }
+\rhead{\begin{small}\runauthor \end{small}}
+\rfoot{\begin{small}Page \thepage \hspace{1pt} of \pageref{LastPage} \end{small}}
+}
+
+% quizzes and exams 
+\DeclareOption{quiz}{ 
+\lhead{\begin{small}\runtitle \end{small}}
+\chead{\begin{small}Your Name: \end{small}}
+\lfoot{\begin{small} \textit{\quoteoftheday}  \end{small}}
+\rfoot{\begin{small}Page \thepage \hspace{1pt} of \pageref{LastPage} \end{small}}
+}
+
+
+\ProcessOptions\relax 

@@ -20,18 +20,5 @@
 \textwidth=6.5in	% assuming lettersize paper, 8.5-2 = 6.5
 \textheight=9in		
 
-% Make links not so fugly
-\RequirePackage{hyperref}
-\RequirePackage{xcolor}
-\hypersetup{
-    colorlinks,		% not boxes, changes color instead
-    linkcolor={red!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black}
-}
-
-% Make lists consistent with singlespace or doublespace.
-\setlist{nolistsep} 	
-
 
 

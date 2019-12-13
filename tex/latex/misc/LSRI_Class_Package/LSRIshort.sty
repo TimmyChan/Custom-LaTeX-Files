@@ -1,0 +1,125 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{LSRIshort}[2019/12/12 TC Basic Package]
+
+%---------------------------------------%
+% Package arranged by : Tsz Timmy Chan	%
+%	Contains math shortcuts				%
+%---------------------------------------%
+
+\RequirePackage{standalone} % make LaTeX input cut out preamble of 
+							%	the files being inputted
+							%	making compilation of subfiles easier.
+
+
+%===== Math Macros =====%
+\RequirePackage{mathtools}	% extended version of amsmath
+							% https://ctan.org/pkg/mathtools?lang=en
+%---Analysis---%
+\newcommand\ceil[1]{\left\lceil #1 \right\rceil} 	% ceiling
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}	% floor
+\newcommand\series[1]{\sum_{#1=1}^{\infty}}			% Series 
+\newcommand\pseries[1]{\sum_{#1=0}^{\infty}}		% Power Series
+% Derivative (Leibniz's notation)
+\newcommand\derivative[2]{\frac{\delta}{\delta #2}\left( #1 \right)}
+%conjugates for complex numbers
+\newcommand{\conj}[1]{\overline{#1}}
+% Characteristic function from analysis f(x) = 1 if x in set, 0 if x not in set.
+\newcommand{\charac}[1]{\chi\raisebox{-4bp}{\scriptsize$#1$}}
+%Complex Log (different from lower case log)
+\DeclareMathOperator{\Log}{Log}
+ 			
+%---Topology---%
+\newcommand\closure[1]{\overline{#1}}	% closure
+\newcommand\boundary{\partial}			% boundary
+\newcommand\takeaway{\backslash}		% takeaway
+
+%Algebra operations%
+\DeclareMathOperator{\lcm}{lcm}					% LCM
+\DeclareMathOperator{\Dom}{Dom}					% Domain
+\DeclareMathOperator{\Tor}{Tor}					% Torsion 
+\newcommand{\abs}[1]{\left|{#1}\right|} 		% Absolute value
+\newcommand\norm[1]{\left\lVert#1\right\rVert}	% Norm
+\newcommand\innerprod[2]{\left\langle #1 , #2 \right\rangle} % Inner product
+\newcommand\GL{\operatorname{GL}} 				% General linear group
+\newcommand\Inn{\operatorname{Inn}} 			% Inner product
+\newcommand\Aut{\operatorname{Aut}} 			% Automorphism group
+\newcommand\Hom{\operatorname{Hom}}				% Homomoprhism
+\newcommand\End{\operatorname{End}}				% Endomorphism ring
+\newcommand\Stab{\operatorname{Stab}} 			% Stablizer
+\newcommand\orb{\operatorname{orb}} 			% Orbit		
+\newcommand\gen[1]{\left< #1 \right>}			% Generator notation
+\newcommand\ch{\operatorname{ch}}				% Charact of fields
+\newcommand\rank{\operatorname{rank}}			% Rank
+\def\normsubgroup{\trianglelefteq}				% Normal subgroup
+\newcommand\dotp[1]{\left\langle #1 \right\rangle}	% dot 
+
+% Matrix operations%
+\DeclareMathOperator{\trace}{trace} 			%Trace 
+\DeclareMathOperator{\nullspace}{null} 			%Null Space
+
+% Topology & Metric Stuff%
+\DeclareMathOperator{\Bd}{Bd} 					% Boundary
+\DeclareMathOperator{\nbd}{neighborhood}		% Neighborhood
+\DeclareMathOperator{\Int}{Int} 				% Interior
+\DeclareMathOperator{\Ext}{Ext} 				% Exterior
+\DeclareMathOperator{\Cl}{Cl} 					% Closure
+\DeclareMathOperator{\range}{range} 			% Range
+
+% Common Sets of Numbers%
+\newcommand{\N}{\mathbb{N}} 		% Natural
+\newcommand{\Z}{\mathbb{Z}} 		% Integer
+\newcommand{\Q}{\mathbb{Q}} 		% Rational
+\newcommand{\R}{\mathbb{R}} 		% Real
+\newcommand{\C}{\mathbb{C}} 		% Complex
+\newcommand{\bb}[1]{\mathbb{#1}} 	% General Mathbb
+
+% Common vectors
+\def\x{\mathbf{x}}
+\def\y{\mathbf{y}}
+\def\A{\mathbf{A}}
+\def\B{\mathbf{B}}
+\def\x{\mathbf{x}}
+\def\y{\mathbf{y}}
+\def\m{\mathbf{m}}
+
+% Additive idenittiy
+\def\0{\mathbf{0}} 
+
+
+% shortcuts for thesis
+\newcommand{\NPol}{\mathsf{NPol}}	% Normal polytope
+\newcommand{\Lattice}{\mathsf{L}}	% Lattice
+\newcommand{\Hilb}{\mathsf{Hilb}}	% Hilbert Basis
+\newcommand{\Cones}{\mathrm{Cones}}	% Pose of Cones in dimension d
+
+
+%Shortcuts for common phrases in proofs %
+\newcommand{\Forwards}{($\Rightarrow$) }			% P -> Q
+\newcommand{\Backwards}{($\Leftarrow$) }			% P <- Q
+\newcommand{\contradiction}{(\Rightarrow\Leftarrow)}% contradiction
+\newcommand{\Let}{\text{Let }}						% Let
+\newcommand{\Given}{\text{Given }}					% Given
+\newcommand{\Suppose}{\text{Suppose }}				% Suppose
+\newcommand{\ST}{\text{ such that }}				% such that
+\newcommand{\EG}{\operatorname{e.g.:}}				% example
+
+
+%Enviornments%
+\RequirePackage{amsthm}
+
+%Theorems%
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{definition*}{Definition}
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem*{conjecture*}{Conjecture}
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{remark}{Remark}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{example}{Example}[section]
+\newtheorem*{example*}{Example}
