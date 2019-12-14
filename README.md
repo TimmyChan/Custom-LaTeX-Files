@@ -18,14 +18,14 @@ Use the instructions in the following link to install these packages in a centra
 ## Description of Files
 Note that the file structure of this github follows the specifications described above, and no changes are necessary.
 
-### tex/latex/misc/MyPackages
-This folder houses all the .sty files. The structure is TCshort.sty ⊂ TCbasic.sty ⊂ TCcommon.sty
-#### TCshort.sty 
-Contains shortcuts commonly used in Algebra and Analysis.
-#### TCbasic.sty
-Builds on top of TCshort.sty, and contains packages often used in writing math and includes TCshort, but definitions and packages that conflict with Beamer are in TCcommon.sty
-#### TCcommon.sty
-Builds on top of TCbasic.sty, and Contains graphics packages, definitions for theorem enviornments, custom enviornments:
+### tex/latex/misc/LSRI_Class_Packages
+This folder houses all the .sty files. The structure is LSRIshort.sty ⊂ LSRIbasic.sty ⊂ LSRIcommon.sty
+#### LSRIshort.sty 
+Contains shortcuts commonly used in mathematics typesetting.
+#### LSRIbasic.sty
+Builds on top of LSRIshort.sty, and contains packages often used in writing and includes TCshort, but definitions and packages that conflict with Beamer are in TCcommon.sty
+#### LSRIcommon.sty
+Builds on top of LSRIbasic.sty, and Contains graphics packages, definitions for theorem enviornments, custom enviornments:
   - SAGE: Modified version of verbatium with Python option.
   ```
   \begin{SAGE} 
