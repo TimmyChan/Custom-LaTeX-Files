@@ -20,12 +20,12 @@ Note that the file structure of this github follows the specifications described
 
 ### tex/latex/misc/MyPackages
 This folder houses all the .sty files. The structure is TCshort.sty ⊂ TCbasic.sty ⊂ TCcommon.sty
-#### TCshort.sty 
-Contains shortcuts commonly used in Algebra and Analysis.
-#### TCbasic.sty
-Builds on top of TCshort.sty, and contains packages often used in writing math and includes TCshort, but definitions and packages that conflict with Beamer are in TCcommon.sty
-#### TCcommon.sty
-Builds on top of TCbasic.sty, and Contains graphics packages, definitions for theorem enviornments, custom enviornments:
+#### LSRIshort.sty 
+Contains shortcuts commonly used in mathematics typesetting.
+#### LSRIbasic.sty
+Builds on top of LSRIshort.sty, and contains packages often used in writing and includes TCshort, but definitions and packages that conflict with Beamer are in TCcommon.sty
+#### LSRIcommon.sty
+Builds on top of LSRIbasic.sty, and Contains graphics packages, definitions for theorem enviornments, custom enviornments:
   - SAGE: Modified version of verbatium with Python option.
   ```
   \begin{SAGE} 
