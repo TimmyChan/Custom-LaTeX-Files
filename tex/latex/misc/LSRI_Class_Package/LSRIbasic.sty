@@ -13,7 +13,28 @@
 							%	the files being inputted
 							%	making compilation of subfiles easier.
 
-%-----Math Typesetting-----%
+%=====APA Formatting=====%
+\usepackage[american]{babel}					% babel for making APA work
+\usepackage{csquotes}
+\usepackage[style=apa]{biblatex}				% apa style for biblatex
+\DeclareLanguageMapping{american}{american-apa}	% apa spelling
+% Fix to for the redactor bug (Dec. 2019 fix)
+\AtEveryBibitem{
+  \iffieldequalstr{editortype}{redactor}
+    {\global\clearname{editor}\typeout{delete editor (type: redactor) in \thefield{citekey}}}{}%
+  \iffieldequalstr{editoratype}{redactor}
+    {\global\clearname{editora}\typeout{delete editora (type: redactor) in \thefield{citekey}}}{}%
+  \iffieldequalstr{editorbtype}{redactor}
+    {\global\clearname{editorb}\typeout{delete editorb (type: redactor) in \thefield{citekey}}}{}%
+  \iffieldequalstr{editorctype}{redactor}
+    {\global\clearname{editorc}\typeout{delete editorc (type: redactor) in \thefield{citekey}}}{}%
+}
+
+%=====Glossary=====%
+\usepackage[acronyms,toc]{glossaries} % Glossaries package
+\makeglossaries
+
+%=====Math Typesetting=====%
 \RequirePackage{mathtools}	% Important for typesetting
 \RequirePackage{amssymb}	% Math symbols
 \RequirePackage{latexsym}	% lazy font symbols
@@ -21,26 +42,22 @@
 \RequirePackage{pifont} 	% More symbols; e.g. calligraphy mark
 \def\qedsymbol{\ding{118}}	% Makes QED symbol to be calligraphy mark
 
-%-----Formatting Arrays-----%
+%=====Formatting Arrays=====%
 \RequirePackage{array}		% Extends the options for column formats,
 \RequirePackage{multirow}	% Vertical "merge cell" like in excel
 \RequirePackage{multicol}	% Horizontal "merge cell" - - -
 \RequirePackage[sc]{mathpazo}	% Changes font to "Pazo" family
 
-%-----Formatting Graphics----%
+%=====Formatting Graphics----%
 \RequirePackage{graphicx} 	% include graphics
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg,.svg,.gif} % common file types
 \RequirePackage{grffile}	% Graphics processor
 \RequirePackage{wasysym}	% glyphs: e.g. gender & astronomical symbols
 
-
-
-
-%-----Highlighting by Boxes-----%
+%=====Highlighting by Boxes=====%
 \RequirePackage{mdframed}
 
-
-%-----Color Definitions-----%
+%=====Color Definitions=====%
 \RequirePackage{xcolor}		% define common colors used in UIC
 % Primary Red
 \definecolor{uic_red}{RGB}{213,0,50}
@@ -59,7 +76,7 @@
 	colorlinks,				% Make links based on color
 	allcolors=.,		
 	linkcolor={uic_red!50!black},		% within text links red
-    citecolor={uic_darkblue!50!black}, 	% cite links darkblue
+    citecolor={uic_dark_blue!50!black}, 	% cite links darkblue
     urlcolor={uic_blue!50!black}		% url links blue
 }
 

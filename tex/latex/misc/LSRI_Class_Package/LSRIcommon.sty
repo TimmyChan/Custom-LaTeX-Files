@@ -5,6 +5,8 @@
 % Package arranged by : Tsz Timmy Chan	%
 %	Contains common settings			%
 %	Extends LSRIbasic and LSRIshort		%
+%	Not compatible with Beamer			%
+%	Tested with article
 %---------------------------------------%
 
 
@@ -34,25 +36,7 @@
 \providecommand{\subject}{}		% blank subject for flashcards
 \providecommand{\Reference}{}	% blank reference for flashcards
 
-%=====APA Formatting=====%
-\usepackage[american]{babel}					% babel for making APA work
-\usepackage[style=apa]{biblatex}				% apa style for biblatex
-\DeclareLanguageMapping{american}{american-apa}	% apa spelling
-% Fix to for the redactor bug (Dec. 2019 fix)
-\AtEveryBibitem{
-  \iffieldequalstr{editortype}{redactor}
-    {\global\clearname{editor}\typeout{delete editor (type: redactor) in \thefield{citekey}}}{}%
-  \iffieldequalstr{editoratype}{redactor}
-    {\global\clearname{editora}\typeout{delete editora (type: redactor) in \thefield{citekey}}}{}%
-  \iffieldequalstr{editorbtype}{redactor}
-    {\global\clearname{editorb}\typeout{delete editorb (type: redactor) in \thefield{citekey}}}{}%
-  \iffieldequalstr{editorctype}{redactor}
-    {\global\clearname{editorc}\typeout{delete editorc (type: redactor) in \thefield{citekey}}}{}%
-}
 
-%=====Glossary=====%
-\usepackage[acronyms,toc]{glossaries} % Glossaries package
-\makeglossaries
 
 %=====Custom symbols=====%
 
@@ -96,4 +80,21 @@
 
 
 
+%---Mathematical amsthm based Enviornments---%
+\RequirePackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{definition*}{Definition}
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem*{conjecture*}{Conjecture}
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{remark}{Remark}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{example}{Example}[section]
+\newtheorem*{example*}{Example}
 

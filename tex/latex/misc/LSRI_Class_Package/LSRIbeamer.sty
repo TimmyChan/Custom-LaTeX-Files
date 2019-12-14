@@ -1,0 +1,34 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{LSRIbeamer}[2019/12/13 LSRI Beamer Package]
+
+%---------------------------------------%
+% Package arranged by : Tsz Timmy Chan	%
+%	use only with documentclass beamer  %
+%	Contains beamer settings			%
+%	Depends on LSRIcommon				%
+%---------------------------------------%
+\usetheme{paloalto}
+
+\RequirePackage{LSRIbasic}	% Load basic packages 
+
+\setbeamercolor{palette primary}{bg=uic_blue} 
+%\setbeamercolor{palette secondary}{bg=uic_dark_blue}
+\setbeamercolor{frametitle}{bg=uic_dark_blue}       
+\setbeamercolor{pallet sidebar primary}{bg=uic_red}    
+\setbeamercolor{block title}{bg=uic_blue}
+\setbeamercolor{block body}{bg=uic_blue!20!white}
+\setbeamercolor{sidebar}{bg=uic_red} %controls the color of the sidebar
+\setbeamercolor{author in sidebar}{fg=uic_secondary_yellow}
+\setbeamercolor{block title example}{bg=uic_secondary_teal}
+\setbeamercolor{block title body}{bg=uic_secondary_teal!20!white}
+\hypersetup{
+  colorlinks,
+  allcolors=.,
+  urlcolor=uic_blue,
+}
+\setbeamercolor{logo}{bg=white}  %controls the color of the logo area
+\logo{\includegraphics[width=.12\textwidth]{COL.LAS.LSRI.CTT.LG.BLK.PNG}}
+\setbeamertemplate{bibliography item}{}
+
+
+
