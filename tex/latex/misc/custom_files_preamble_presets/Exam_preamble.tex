@@ -1,0 +1,64 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage{standalone} 	% INPUT FILES WITH PREAMBLES 
+% (makes \input{FILE} ignores all code in FILE before \begin{document})
+\usepackage[shortlabels]{enumitem} % Customize enumerate enviornment
+
+% INPUT ALL EXAM SPECIFIC HEADER INFO HERE
+\newcommand{\class}{CLASS}
+\newcommand{\term}{SEMESTER YEAR}
+\newcommand{\examnum}{EXAM \# }
+\newcommand{\examdate}{MM/DD/YYYY}
+%\newcommand{\timelimit}{TIMELIMIT}
+
+%ADD CUSTOM PACKAGES HERE
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb, tabu, tikz, pgfplots}
+\usepackage{multicol}
+
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+
+\begin{document}
+\makeatletter
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+%\textbf{Time Limit: \timelimit} & Teaching Assistant & \makebox[2in]{\hrulefill}
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+\makeatother
+
+This exam contains \numquestions\ questions. The test has \numpoints\ points possible. You are allowed to use notes written on one side of an 3$\times$5 note card and a (non-graphing) calculator. Make sure to read all directions and show all of your work. 
+
+
+\begin{center}
+Grade Table \\
+\addpoints
+\gradetable[v][questions]
+\end{center}
+
+\noindent
+\rule[2ex]{\textwidth}{2pt}
+
+\newpage
+
+\begin{questions}
+	\question[10] %\input{}
+	\vskip 2in
+	
+\end{questions}
+	
+
+\end{document}

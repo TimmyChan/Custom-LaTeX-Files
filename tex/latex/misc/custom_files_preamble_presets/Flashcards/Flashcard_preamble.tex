@@ -1,3 +1,4 @@
+
 %--------------------------------------------%
 % Packages arranged by : Tsz Timmy Chan	     %
 %                 Date : Feb 25th, 2017      %
@@ -8,10 +9,10 @@
 \author{Tsz Timmy Chan}
 
 
-\usepackage{TCcommon}
+\usepackage{LSRIcommon}
 
-\renewcommand{\subject}{}
-\renewcommand{\Reference}{}
+\renewcommand{\subject}{SUBJECT}
+\renewcommand{\Reference}{BOOK BY SOME PERSON}
 
 \cardfrontfoot{\subject}
 \cardfrontstyle[\large\slshape]{headings}
@@ -19,9 +20,15 @@
 
 \begin{document}
 
-%\input{CopyrightCard}
+\input{CopyrightCard}
 
-@
+\begin{flashcard}[Section]{Front of the card}
+\vspace*{\stretch{1}}
+\begin{center}
+Back of the card.
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
 
 
 \end{document}
