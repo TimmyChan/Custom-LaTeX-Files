@@ -1,0 +1,129 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{TCexamtitle}[2017/11/23 TC Exam Title Page Package]
+
+% Benediction is a quote on the title page.
+% \examtitle is standard
+% \nonotesexamtitle is no notes
+% \takehometitle is take home instructions
+
+\providecommand{\benediction}{"May the force be with you." - Jedi Benediction}
+
+\newcommand{\examtitle}[1]{
+\maketitle
+\thispagestyle{empty}
+\begin{center}
+\begin{Large}
+Allowed Time: #1 minutes\\
+\vskip 1cm
+Exam Directions: 
+\begin{enumerate}
+\item Silence your cellphones.  
+\item Please use a pencil.
+\item Show your work.
+\item You may have one index card of notes. ($3"\times 5"$)
+\item You may use a scientific or graphing calculator.
+\item If you need extra paper, raise your hand.
+\item If you have questions, raise your hand.
+\item Do not leave any questions blank:\\ Write down a description of what you do/don't understand about the problem for partial credit opportunities.
+\end{enumerate}
+\end{Large}
+\vskip 1cm
+\textit{\benediction}
+\end{center}
+\clearpage
+\newpage
+\hfill
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+}
+
+\newcommand{\nonotesexamtitle}[1]{
+\maketitle
+\thispagestyle{empty}
+\begin{center}
+\begin{Large}
+Allowed Time: #1 minutes\\
+\vskip 1cm
+Exam Directions: 
+\begin{enumerate}
+\item Silence your cellphones.  
+\item Please use a pencil.
+\item Show your work.
+%\item You may have one index card of notes. ($4"\times 6"$)
+\item You may use a scientific or graphing calculator.
+\item If you need extra paper, raise your hand.
+\item If you have questions, raise your hand.
+\item Do not leave any questions blank:\\ Write down a description of what you do/don't understand about the problem for partial credit opportunities.
+\end{enumerate}
+\end{Large}
+\vskip 1cm
+\textit{\benediction}
+\end{center}
+\clearpage
+\newpage
+\hfill
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+}
+
+
+\newcommand{\takehometitle}[1]{
+\maketitle
+\thispagestyle{empty}
+\begin{center}
+\begin{Large}
+Due at the Beginning of Class on: #1\\
+\vskip 1cm
+Exam Directions: 
+\begin{enumerate}
+\item Please use a pencil.
+\item Show your work.
+\item You may use all resources available to you.
+\item You may use a scientific or graphing calculator.
+\item Do not leave any questions blank:\\ Write down a description of what you do/don't understand about the problem for partial credit opportunities.
+\end{enumerate}
+\end{Large}
+\vskip 1cm
+\textit{\benediction}
+\end{center}
+\clearpage
+\newpage
+\hfill
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+}
+
+
+\newcommand{\beforeyoubegin}{
+\begin{itemize}
+\item Take a deep breath
+\item Write your name on the exam
+\item Skim the entire exam, then go for the easy problems first! :)
+\item (1 bonus point) Write "I've got this." here: 
+\vskip .5in 
+\end{itemize}
+}
+
+
+
+%Enviornments%
+\newenvironment{TrueFalse}
+    {
+    True/False: Circle "T" if the statement is true, "F" if the statement is false. 
+
+    \hskip .5in \underline{Justify your answers!}\\ 
+    \begin{enumerate}[\textbf{T  /  F}]
+    \setlength\itemsep{5em}
+ 	}
+ 	{
+    \end{enumerate}
+    \vskip 5em
+    }
+
+\newcommand{\meme}[2][width=.25\textwidth]{\begin{flushright}
+\includegraphics[#1]{#2}
+\end{flushright}}
