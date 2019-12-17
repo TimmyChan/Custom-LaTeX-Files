@@ -18,7 +18,7 @@
 %page styles and header/footer codes
 \pagestyle{fancy} %that's right fancy af%
 \fancyhf{}
-\let\runauthor\@author
+\let\runauthor\AB@author
 \let\runtitle\@title
 \def\smalltitle{
 \begin{center}
@@ -48,9 +48,9 @@
 
 % Log for journaling
 \DeclareOption{log}{
-\lhead{ }
+\lhead{\begin{small} \leftmark \end{small} }
 \rhead{\begin{small}\runauthor \end{small}}
-\rfoot{\begin{small}Page \thepage \hspace{1pt} of \pageref{LastPage} \end{small}}
+\rfoot{\begin{small} \thepage  \end{small}}
 }
 
 % quizzes and exams 
