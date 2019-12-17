@@ -1,5 +1,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{LSRIheader}[2019/12/12 LSRI header package]
+
+%-------------------------------------------%
+% 	Package arranged by : Tsz Timmy Chan	%
+%				Date	: Dec 2019			%
+%	Contains header and footer options		%
+%	Customizes fancyhdr.sty					%
+%-------------------------------------------%
 % This package contains three options
 % notes: header = title ... author
 % log: header = ... author
@@ -48,6 +55,7 @@
 
 % Log for journaling
 \DeclareOption{log}{
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 \lhead{\begin{small} \leftmark \end{small} }
 \rhead{\begin{small}\runauthor \end{small}}
 \rfoot{\begin{small} \thepage  \end{small}}
