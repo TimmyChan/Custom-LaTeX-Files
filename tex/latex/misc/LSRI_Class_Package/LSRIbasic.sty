@@ -34,13 +34,15 @@
 \usepackage[acronyms,toc]{glossaries} % Glossaries package
 \makeglossaries
 
-%=====Math Typesetting=====%
-\RequirePackage{mathtools}	% Important for typesetting
-\RequirePackage{amssymb}	% Math symbols
-\RequirePackage{latexsym}	% lazy font symbols
-\RequirePackage{dsfont}		% Double blackboard fonts
-\RequirePackage{pifont} 	% More symbols; e.g. calligraphy mark
-\def\qedsymbol{\ding{118}}	% Makes QED symbol to be calligraphy mark
+%=====Typesetting=====%
+\RequirePackage{mathtools}			% Important for typesetting
+\RequirePackage{amssymb}			% Math symbols
+\RequirePackage{latexsym}			% lazy font symbols
+\RequirePackage{dsfont}				% Double blackboard fonts
+\RequirePackage{pifont} 			% More symbols; e.g. calligraphy mark
+\def\qedsymbol{\ding{118}}			% Makes QED symbol to be calligraphy mark
+\RequirePackage{microtype}			% Better typesetting
+\microtypesetup{protrusion=false}	% No protutions!
 
 %=====Formatting Arrays=====%
 \RequirePackage{array}		% Extends the options for column formats,
@@ -53,6 +55,8 @@
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg,.svg,.gif} % common file types
 \RequirePackage{grffile}	% Graphics processor
 \RequirePackage{wasysym}	% glyphs: e.g. gender & astronomical symbols
+\RequirePackage{float}		% Makes includegraphics have [H] option
+
 
 %=====Highlighting by Boxes=====%
 \RequirePackage{mdframed}
