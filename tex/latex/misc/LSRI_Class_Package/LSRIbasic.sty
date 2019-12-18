@@ -30,9 +30,6 @@
     {\global\clearname{editorc}\typeout{delete editorc (type: redactor) in \thefield{citekey}}}{}%
 }
 
-%=====Glossary=====%
-\usepackage[acronyms,toc]{glossaries} % Glossaries package
-\makeglossaries
 
 %=====Typesetting=====%
 \RequirePackage{mathtools}			% Important for typesetting
@@ -84,6 +81,10 @@
     citecolor={uic_dark_blue!50!black}, 	% cite links darkblue
     urlcolor={uic_blue!50!black}		% url links blue
 }
+
+%=====Glossary=====%
+\usepackage[acronyms,toc]{glossaries} % Glossaries package
+\makeglossaries
 
 % Boxes for remarks to communicat with advisor when writing%
 % researchnote = remarks
