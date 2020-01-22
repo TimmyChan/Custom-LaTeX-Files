@@ -5,7 +5,7 @@
 %	Uses biblatex-apa package for 		%
 %		references 						%
 %---------------------------------------%
-
+% File hosted on 
 
 \documentclass{ICLSarticle}
 \usepackage{ICLSpreamble}
@@ -28,17 +28,25 @@
 \addbibresource{My_Library.bib}		% Reference file, NO SPACES in the name
 
 
-% CUSTOM PACKAGES GO HERE
-
-
+% CUSTOM PACKAGES GO HERE %
+%\usepackage{LSRIcommon}
+% CUSTOM PACKAGES GO HERE %
 
 \begin{document}
 
+%====ABSTRACT AND KEYWORDS====%
 \twocolumn[\maketitle
 \begin{ICLSabstract}
-	\input{abstract_text}
-	\end{ICLSabstract}
+	\input{abstract_text} % This template includes standalone package so this works nicely
+\end{ICLSabstract}
 	\ICLSkeywords{maximum five keywords should be included}]
+
+
+
+
+
+%====MAIN TEXT BELOW====%
+
 \section{Introduction}
 \input{Introduction}
 
