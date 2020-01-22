@@ -1,76 +1,35 @@
 %---------------------------------------%
-% Packages arranged by : Tsz Timmy Chan %
-%                 Date : Dec 12th, 2019 % 
+% Packages arranged by : Tsz Timmy Chan	%
+%                 Date : Jan 21st, 2019 %
+%	See ICLSpreamble.sty for details	%
+%	Uses biblatex-apa package for 		%
+%		references 						%
 %---------------------------------------%
 
+
 \documentclass{ICLSarticle}
-\usepackage{standalone}
-\usepackage{amsthm}
-\usepackage[blocks]{authblk}
-\usepackage[pdfborder={0 0 0}]{hyperref} %for emails
-\usepackage{cleveref}
-\renewcommand\Authfont{\fontsize{10}{10}\selectfont\bfseries}
-\renewcommand\Affilfont{\fontsize{10}{10}\selectfont\normalfont}
-\setlength{\affilsep}{0em}
-\usepackage{mathptmx} %times new roman
-\newtheorem{theorem}{Theorem}
-\usepackage{multirow}
-
-\usepackage{float}
-\renewenvironment{proof}{{\noindent\bfseries Proof.}}{}
-
-\usepackage{caption} 
-\captionsetup[table]{skip=10pt}
-\captionsetup[figure]{skip=10pt}
-
-%=====APA Formatting=====%
-\usepackage[american]{babel}					% babel for making APA work
-\usepackage{csquotes}
-\usepackage[style=apa]{biblatex}				% apa style for biblatex
-\DeclareLanguageMapping{american}{american-apa}	% apa spelling
-% Fix to for the redactor bug (Dec. 2019 fix)
-\AtEveryBibitem{
-  \iffieldequalstr{editortype}{redactor}
-    {\global\clearname{editor}\typeout{delete editor (type: redactor) in \thefield{citekey}}}{}%
-  \iffieldequalstr{editoratype}{redactor}
-    {\global\clearname{editora}\typeout{delete editora (type: redactor) in \thefield{citekey}}}{}%
-  \iffieldequalstr{editorbtype}{redactor}
-    {\global\clearname{editorb}\typeout{delete editorb (type: redactor) in \thefield{citekey}}}{}%
-  \iffieldequalstr{editorctype}{redactor}
-    {\global\clearname{editorc}\typeout{delete editorc (type: redactor) in \thefield{citekey}}}{}%
-}
-\setlength\bibhang{2em}
-
-
-\newcommand{\ICLStitle}[1]{\title{\fontsize{20}{20}\selectfont #1}}
-
-
-
-
-
+\usepackage{ICLSpreamble}
 
 \ICLStitle{Instructions for Preparing Papers for ICLS 2019}	% Work Title Here.
 
 % YOUR NAME(S) HERE 
-
 \author{Vincent F. Yu}
 \affil{Department of Industrial Management\\National Taiwan University of Science \& Technology, Taipei, Taiwan\\Email: \url{vincent@mail.ntust.edu.tw1}
 }
-
+% Name of second author
 \author{Chung-Cheng Lu}
 \affil{Department of Transportation and Logistics Management\\National Chiao Tung University, Hsinchu, Taiwan\\Email: \url{jasoncclu@gmail.com}
 }
 
+% more authors
 %\author{Another Author}
 %\affil{Department\\University, City, Country\\Email: handle@server.edu}
 
-%\usepackage[notes]{LSRIheader}
-
-\date{}
-\usepackage{setspace}
-\singlespacing
-
 \addbibresource{My_Library.bib}		% Reference file, NO SPACES in the name
+
+
+% CUSTOM PACKAGES GO HERE
+
 
 
 \begin{document}
@@ -128,14 +87,14 @@ Each figure should have a caption below the figure. The caption of a table shoul
 \caption{The caption of a figure should appear at the bottom of the figure}
 \end{figure}
 \section*{Acknowledgements}
-The acknowledgements should go immediately before the references. This style file and sample file are developed based on ASME style file by Harry H. Cheng, UCLA.
+The acknowledgements should go immediately before the references. This style file and sample file are developed based on ASME style file by Harry H. Cheng, UCLA. This latex file template is created by Tsz (Timmy) L. Chan, UIC.
 
 
 \appendix
 \section*{Appendices}
 Appendices, if any, directly follow the text and the references (see below). Letter them in sequence and provide an informative title: Appendix A. Title of Appendix. 
 \section*{citations}
-Citations within the text appear in parenthesis as \parencite{linton_disability_1998} or, if the author’s name appears in the text itself, as \textcite{linton_disability_1998}. Append lowercase letters to the year in case of ambiguity. Treat double authors as in \parencite{sengupta-irving_conceptualizing_2017}, but write as in \parencite{decuyper_grasping_2010} when more than two authors are involved. Collapse multiple citations as in (Aho and Ullman, 1972; Gusfield, 1997). Also refrain from using full citations as sentence constituents. We suggest that instead of
+Citations within the text appear in parenthesis as \parencite{linton_disability_1998} or, if the author’s name appears in the text itself, as \textcite{linton_disability_1998}. Append lowercase letters to the year in case of ambiguity. Treat double authors as in \parencite{sengupta-irving_conceptualizing_2017}, but write as in \parencite{decuyper_grasping_2010} when more than two authors are involved. Collapse multiple citations as in \parencite{linton_disability_1998, sengupta-irving_conceptualizing_2017}. Also refrain from using full citations as sentence constituents. We suggest that instead of
 "\parencite{linton_disability_1998} showed that\ldots"
 you use
 "\textcite{linton_disability_1998} showed that\ldots"
