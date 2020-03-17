@@ -6,9 +6,8 @@
 % Date             		: Mar, 2020			%
 %-------------------------------------------%
 
-\LoadClass[10pt,a4paper]{article}
-\setlength{\columnsep}{.75cm}
-
+\LoadClass[10pt,a4paper,onecolumn]{article}
+\setlength\parindent{.5in}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
@@ -23,16 +22,18 @@
 \pagenumbering{gobble}
 
 %margins%
-\usepackage[top=3cm, bottom=4cm, left=1.7cm, right=1cm]{geometry}
+\usepackage[margin=1in]{geometry}
 
 %fix quotation environment for abstract%
 \usepackage{etoolbox}
-\patchcmd{\quotation}{\rightmargin}{\leftmargin 1.2cm \rightmargin}{}{}
+\patchcmd{\quotation}{\rightmargin}{\leftmargin .5in \rightmargin}{}{}
+
+\RequirePackage{mathptmx} %times new roman
 
 
 %custom abstract environment
 \newenvironment{ICLSabstract}
-	{\vspace{-5ex}\begin{quotation}\noindent\textbf{Abstract.}
+	{\begin{quotation}\noindent\textbf{Abstract.}
 	}
     { 
     \end{quotation}
@@ -46,27 +47,70 @@
 {\begin{quotation}\noindent\textbf{Keywords:} #1\\\end{quotation}
 }
 
+%===FORMATTING SECTIONS/TITLES===%
+\usepackage[explicit]{titlesec}
 \usepackage{titling}
+\usepackage[scaled]{helvet}
+
+%make title 14 pt Helvetica 
+\renewcommand{\maketitlehooka}{\normalfont\sffamily\Large\bfseries}
+\posttitle{\par\end{center}\vskip -2em}
+%change behavior of \and for authors
+\renewcommand{\and}{\unskip\\}
 \posttitle{\par\end{center}}
 % 60 pt = 2.116582cm
 % \droptitle = 3cm -60pt = 1.116582cm
-\setlength{\droptitle}{0cm}
+\setlength{\droptitle}{-1.5cm}
 
 
 % format sections
- \usepackage{mfirstuc}
-\usepackage{titlesec}
+\usepackage{mfirstuc}
 \titleformat{\section}
-  {\fontsize{11}{11}\selectfont\bfseries\uppercase}{\thesection}{1em}{}
-  \titleformat{\subsection}
-  {\fontsize{11}{11}\selectfont\bfseries}{\thesubsection}{1em}{}
-    \titleformat{\subsubsection}
-  {\fontsize{11}{11}\selectfont\bfseries}{\thesubsubsection}{1em}{}
+	{\normalfont\sffamily\large\bfseries}{}{0em}{#1}
+\titlespacing*{\section}
+	{0pt}{\baselineskip}{0pt}
   
+\titleformat{\subsection}
+	{\normalfont\sffamily\large}{}{0em}{#1}
+\titlespacing*{\subsection}
+	{0pt}{\baselineskip}{0pt}
+
+\usepackage[normalem]{ulem}
+\titleformat{\subsubsection}
+	{\normalfont\sffamily}{}{0em}{\uline{#1}}
+\titlespacing*{\subsubsection}
+	{0pt}{\baselineskip}{0pt}
 % indent first line after section  
-\usepackage{indentfirst}
+%\usepackage{indentfirst}
+
 
 % formatting for affiliations
-\RequirePackage[blocks]{authblk}
-\renewcommand\Authfont{\fontsize{10}{10}\selectfont\bfseries}
+\RequirePackage[blocks]{authblk} 
+%\setlength{\affilsep}{-2em}
+\renewcommand\Authfont{\fontsize{10}{10}\selectfont\normalfont}
 \renewcommand\Affilfont{\fontsize{10}{10}\selectfont\normalfont}
+
+
+%	enumerate environment
+
+\RequirePackage[shortlabels]{enumitem}	% Additional customization of lists	
+% Make lists spacing consistent	spacing
+\setlist{itemsep=3pt}
+
+\usepackage{caption}
+\DeclareCaptionFormat{underlcap}{#1#2#3\par}
+\DeclareCaptionLabelFormat{underlcap}{\uline{#1~#2}}
+\DeclareCaptionTextFormat{underlcap}{\uline{#1}}
+\DeclareCaptionLabelSeparator{underlcap}{\uline{:~}}
+\captionsetup[table]{justification = raggedright,
+              singlelinecheck = false,
+             labelformat = underlcap,
+             textformat = underlcap,
+             labelseparator = underlcap}
+\DeclareCaptionLabelSeparator{underlcap2}{\uline{.}~}
+\captionsetup[figure]{justification = centering,
+              singlelinecheck = false,
+             labelformat = underlcap,
+             labelseparator =underlcap2}
+ 
+

@@ -12,8 +12,16 @@
 \RequirePackage{standalone} % Make LaTeX input cut out preamble of 
 							%	the files being inputted
 							%	making compilation of subfiles easier.
+\usepackage{endnotes}
+\let\footnote=\endnote %force all footnotes to become endnotes anyway
+\renewcommand{\makeenmark}{(\theenmark)\enspace}
+\renewcommand{\enotesize}{\fontsize{9}{9}\selectfont}
+\renewcommand{\enoteformat}{%
+\noindent
+  \leftskip=.25in
+  \makebox[0pt][r]{(\theenmark) \rule{0pt}{\dimexpr\ht\strutbox}}%
+}
 
-\RequirePackage{mathptmx} %times new roman
 
 \RequirePackage[pdfborder={0 0 0}]{hyperref} %for emails
 
@@ -33,13 +41,11 @@
   \iffieldequalstr{editorctype}{redactor}
     {\global\clearname{editorc}\typeout{delete editorc (type: redactor) in \thefield{citekey}}}{}%
 }
-\setlength\bibhang{2em}
+%\setlength\bibhang{2em}
 \renewcommand\refname{REFERENCES}
 
 %=====Useful packages=====%
-\RequirePackage[shortlabels]{enumitem}	% Additional customization of 
-										%	enumerate environment
-\setlist{nolistsep}						% Make lists spacing consistent			
+		
 										%	 with rest of text
 \RequirePackage[useregional]{datetime2} % Better date/time management
 \RequirePackage{microtype}				% Handles character protrusion
@@ -79,12 +85,10 @@
 %---
 \RequirePackage{amsthm}
 \newtheorem{theorem}{Theorem}
-\setlength{\affilsep}{0em}
 \usepackage{multirow}
 
 \usepackage{float}
 \renewenvironment{proof}{{\noindent\bfseries Proof.}}{}
 
-\usepackage{caption} 
-\captionsetup[table]{skip=10pt}
-\captionsetup[figure]{skip=10pt}
+
+
